@@ -4,6 +4,8 @@
 
 Makefile                                              @thiagokokada
 
+/modules/lib/file-overlay.nix                         @aiotter
+
 /modules/config/home-cursor.nix                       @polykernel @league
 
 /modules/config/i18n.nix                              @midchildan
@@ -80,6 +82,8 @@ Makefile                                              @thiagokokada
 /modules/programs/bat.nix                             @marsam
 
 /modules/programs/beets.nix                           @rycee
+
+/modules/programs/blesh.nix                           @aiotter
 
 /modules/programs/bottom.nix                          @polykernel
 /tests/modules/programs/bottom                        @polykernel

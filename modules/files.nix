@@ -21,6 +21,8 @@ let
       then file.source
       else builtins.path { path = file.source; name = sourceName; };
 
+  fileOverlay = (import lib/file-overlay.nix { inherit pkgs config; });
+
 in
 
 {
@@ -399,7 +401,7 @@ in
                else toString v.executable)
               (toString v.recursive)
             ]}
-        '') cfg
+        '') (fileOverlay cfg)
       ));
   };
 }

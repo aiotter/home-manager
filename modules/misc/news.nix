@@ -696,6 +696,13 @@ in
           A new module is available: 'programs.gallery-dl'.
         '';
       }
+
+      {
+        time = "2022-09-19T11:03:53+00:00";
+        message = ''
+          A new module is available: 'programs.blesh'.
+        '';
+      }
     ];
   };
 }
