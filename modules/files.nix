@@ -21,7 +21,8 @@ let
       then file.source
       else builtins.path { path = file.source; name = sourceName; };
 
-  fileOverlay = (import lib/file-overlay.nix { inherit pkgs config; });
+  fileOverlays = (import lib/file-overlays.nix { inherit pkgs config; });
+  modifyFiles = cfg: fix (builtins.foldl' (x: y: extends y x) (self: cfg) fileOverlays);
 
 in
 
@@ -401,7 +402,7 @@ in
                else toString v.executable)
               (toString v.recursive)
             ]}
-        '') (fileOverlay cfg)
+        '') (modifyFiles cfg)
       ));
   };
 }
